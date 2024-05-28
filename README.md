@@ -46,5 +46,4 @@ retrieval and reporting features.
 
 
 ## USE CASE
-
-https://github.com/Parthasarathi-D/attandance-manager/assets/141064484/b8a408ac-3688-4ad9-9f7f-fe78a55f6f9f
+https://github.com/Parthasarathi-D/attandance-manager/issues/1#issue-2320024000
