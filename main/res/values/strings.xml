@@ -1,0 +1,29 @@
+<resources>
+    <!-- Strings for LoginActivity -->
+    <string name="app_name">Attendance App</string>
+    <string name="logo_description">MIT -Madras Institute Of Technology</string>
+
+    <!-- Strings for RegistrationActivity -->
+    <string name="id_hint">ID (Roll No/Staff ID)</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="role_hint">Role (e.g., Student, Staff)</string>
+    <string name="welcome_message">Hello, %s</string>
+
+    <string name="register_button">Register</string>
+
+    <!-- Strings for LoginActivity and RegistrationActivity -->
+    <string name="all_fields_required">All fields are required</string>
+    <string name="id_exists">ID already exists. Please choose a different one.</string>
+
+    <string name="registration_failed">Registration failed. Please try again.</string>
+
+    <!-- Strings for LoginActivity -->
+    <string name="login_button">Login</string>
+    <string name="invalid_credentials">Invalid credentials. Please try again.</string>
+    <string name="both_fields_required">Both username and password are required</string>
+    <string name="welcome_staff_message">Welcome, %1$s!</string>
+
+    <!-- Strings for MainActivity -->
+    <string name="your_session_token">your_session_token</string>
+</resources>
