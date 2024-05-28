@@ -1,0 +1,257 @@
+h1{
+    background-color:#283618;
+    color:#fefae0;
+    font-family: 'Bree Serif', serif;
+    font-family: 'Jost', sans-serif;
+   font-family: 'Kanit', sans-serif;
+   font-family: 'Outfit', sans-serif;
+   padding: 1.0em;
+   
+
+}
+body{
+    background-color:#fefae0 ;
+   
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+}
+h2{
+    background-color:#606c38;
+    color:#fefae0;
+    font-family: 'Bree Serif', serif;
+    font-family: 'Jost', sans-serif;
+   font-family: 'Kanit', sans-serif;
+   font-family: 'Outfit', sans-serif;
+   margin: 0;
+   text-align: right;
+   padding-right: 1.5em;
+   padding: 0.5em;
+
+   
+  
+}
+h1,h2,h3{
+    margin: 0;
+}
+a {
+    color: #fefae0;
+    text-decoration: none;
+    padding: 0.9em;
+}
+  
+  a:hover {
+    color:greenyellow; 
+  }
+
+  a:active {
+    color: #fefae0; 
+  }
+  h3{
+    background-color:#e9edc9;
+    color:#606c38;
+    font-family: 'Bree Serif', serif;
+    font-family: 'Jost', sans-serif;
+   font-family: 'Kanit', sans-serif;
+   font-family: 'Outfit', sans-serif;
+   padding: 1.0em;
+   
+
+}
+.container{
+    color:#283618;
+    font-family: 'Jost', sans-serif;
+   font-size:50px;
+   padding-left: 0.5em;
+  
+   display: flex;
+   position: relative;
+      max-width: 100%;
+      overflow: hidden;
+}
+
+.left{
+    width: 28%;
+    text-align: left;
+}
+.right{
+    width: 48%;
+    text-align: right;
+    padding-right: 0.5em;
+}
+.about{
+    color:#588157;
+    font-family: 'Jost', sans-serif;
+   font-size:30px;
+   padding-left: 0.5em;
+   padding-right: 0.5em;
+   display: flex;
+   position: relative;
+
+}
+button {
+    background-color:#283618;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+  }
+  
+  button:hover {
+    background-color: #283618;
+    animation: shake 0.5s;
+  }
+  
+  @keyframes shake {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    25%, 75% {
+      transform: translateX(-5px);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+  }
+  .team
+  {
+    background-color:#283618;
+    color:#fefae0;
+    font-family: 'Bree Serif', serif;
+    font-family: 'Jost', sans-serif;
+   font-family: 'Kanit', sans-serif;
+   font-family: 'Outfit', sans-serif;
+   padding: 1.0em;
+   font-size: 30px;
+   position: fixed;
+   bottom: 0;
+   width: 100%;
+  }
+  .team1
+  {
+    background-color:#283618;
+    color:#fefae0;
+    font-family: 'Bree Serif', serif;
+    font-family: 'Jost', sans-serif;
+   font-family: 'Kanit', sans-serif;
+   font-family: 'Outfit', sans-serif;
+   padding: 1.0em;
+   font-size: 20px;
+   
+   
+  }
+  .login-box {
+    background-color: #fff;
+    padding: 120px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .login-box h2 {
+    text-align: center;
+  }
+
+  .login-container {
+    text-align: center;
+    width: 300px;
+    margin: 0 auto; /* Center the box horizontally */
+  }
+
+  .login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+
+  .login-container button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .login-container button[type="reset"] {
+    background-color: #e74c3c;
+  }
+ /* styles.css */
+
+/* Table styles */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #283618; /* Green background */
+  color: white; /* White text color */
+}
+td{
+  background-color:#adc178;
+  color:#283618;
+}
+
+/* Search input styles */
+#searchByName,
+#searchByTimestamp {
+  width: 60%; /* Adjust the width as desired */
+  padding: 6px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded corners */
+  display: block;
+  margin: 0 auto; /* Center alignment */
+}
+
+/* Search input focus styles */
+#searchByName:focus,
+#searchByTimestamp:focus {
+  outline: none;
+  border-color: #4CAF50; /* Green border on focus */
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Green shadow on focus */
+}
+/* styles.css */
+
+/* Container for date and time pickers */
+.date-time-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Style for date picker */
+#datePicker,
+#timePicker {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+  margin: 10px; /* Add margin for spacing */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow */
+  display: inline-block; /* Display inline */
+}
+
+#datePicker:hover,
+#datePicker:focus,
+#timePicker:hover,
+#timePicker:focus {
+  border-color: #4CAF50; /* Green border on hover/focus */
+}
+.pdf-content {
+  filter: grayscale(100%);
+}

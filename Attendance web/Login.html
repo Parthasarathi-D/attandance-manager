@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="loginstyle.css">
+    <!-- Your other CSS and font links -->
+    <title>Attendance Management System</title>
+</head>
+<body>
+    <h1><center>Attendance Management System</center></h1>
+    <h2>
+        <a href="Frontpage.html">About us</a>
+        <a href="Login.html">Login</a>
+    </h2>
+
+    <div class="login-box">
+        <div class="login-container">
+            <h2>Login</h2>
+            <form onsubmit="validateForm(event)">
+                <input id="username" type="text" placeholder="Username" required>
+                <br>
+                <input id="password" type="password" placeholder="Password" required>
+                <br>
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </form>
+        </div>
+    </div>
+    <div class="team">
+        <center> The Official team</center>
+        <hr>
+        <div class="team1">
+            <center>
+                &nbsp; &nbsp; &nbsp;&nbsp;Dharshan &nbsp; &nbsp; &nbsp; &nbsp;Devnath
+                &nbsp; &nbsp; &nbsp;&nbsp;Parthasarathi &nbsp; &nbsp; &nbsp;&nbsp;Arun &nbsp; &nbsp; &nbsp;&nbsp;
+            </center>
+        </div>
+    </div>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Prevent form submission for demonstration
+
+            // Replace these values with your actual username and password
+            const validUsername = "Vetri";
+            const validPassword = "Vetri123";
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            if (username === validUsername && password === validPassword) {
+                window.location.href = `attendance.html?username=${encodeURIComponent(username)}`;
+                
+            }
+            else{
+                alert("Invalid username or password. Please try again."); // Show error message
+            }
+        }
+    </script>
+</body>
+</html>

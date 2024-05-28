@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Analytics Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Attendance Analytics Dashboard</h1>
+    
+    <h2>Filter Options</h2>
+    <form id="filterForm">
+        <label for="subjectCode">Subject Code:</label>
+        <select id="subjectCode" name="subject_code">
+            <option value="">Select Subject Code</option>
+            {% for code in subject_codes %}
+                <option value="{{ code }}">{{ code }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="staffName">Staff Name:</label>
+        <select id="staffName" name="staff_name">
+            <option value="">Select Staff Name</option>
+            {% for name in staff_names %}
+                <option value="{{ name }}">{{ name }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="selectedDate">Select Date:</label>
+        <input type="date" id="selectedDate" name="selected_date">
+
+        <button type="submit">Apply Filters</button>
+    </form>
+
+    <h2>Attendance Chart</h2>
+    <canvas id="attendanceChart" width="400" height="200"></canvas>
+
+<script>
+    document.getElementById('filterForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        fetch('/data?' + new URLSearchParams(new FormData(event.target)))
+            .then(response => response.json())
+            .then(data => {
+                console.log('Received data:', data);
+                const ctx = document.getElementById('attendanceChart').getContext('2d');
+                try {
+                    if (window.attendanceChart instanceof Chart) {
+                        window.attendanceChart.destroy();
+                    }
+                    window.attendanceChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: data.map(item => item.attendance_timestamp),
+                            datasets: [{
+                                label: 'Attendance Count',
+                                data: data.map(item => item.attendance_count),
+                                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                borderColor: 'rgba(75, 192, 192, 1)',
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                } catch (error) {
+                    console.error('Error creating chart:', error);
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    });
+</script>
+
+
+
+
+</body>
+</html>

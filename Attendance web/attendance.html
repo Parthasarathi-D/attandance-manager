@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#analyticsButton a {
+    color: black;
+    text-decoration: none; /* Optional: Remove underline */
+}
+
+</style>
+
+    <link rel="stylesheet" href="loginstyle.css">
+    <!-- Your other CSS and font links -->
+    <!-- Include jsPDF from CDN -->
+    <!-- Latest jsPDF CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
+
+
+</head>
+     
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management System</title>
+</head>
+<body>
+    <h1><center>Attendance Management System</center></h1>
+    <h2>
+        
+        <h2 id="loggedInUser">
+    </h2>
+    <body>
+        <h3><center> ATTENDANCE LIST </center></h3>
+        <div class="date-time-container">
+            <input type="text" id="staffIdInput" onkeyup="searchTable('staffId')" placeholder="Search by Staff ID..">
+
+        <!-- Date picker -->
+        <input type="date" id="datePicker" onchange="searchTable('date')" placeholder="Search by Date.." >
+
+        <!-- Subject Code input for search -->
+        <input type="text" id="subjectCodeInput" onkeyup="searchTable('subjectCode')" placeholder="Search by Subject Code.." >
+       
+        <div id="data" class="pdf-content">
+        <button id="downloadButton" onclick="generatePDF()">Download  as PDF</button></div>
+
+
+        <div id="analyticsButton"> <a href="http://127.0.0.1:5000/" target="_blank">Go to Analytics</a> </div>
+
+    </div>
+        
+        <div id="result"></div>
+    
+        <script src="script.js"></script>
+    </body>
+    
+   
+    <script>
+        // Retrieve the username from the URL query parameter
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const username = urlParams.get('username');
+    
+        // Display the logged-in username in the header
+        const loggedInUser = document.getElementById('loggedInUser');
+    
+        if (username) {
+            loggedInUser.innerText = `Logged in as: ${decodeURIComponent(username)}`;
+        } else {
+            loggedInUser.innerText = "User not logged in"; // Default message if username is not provided
+        }
+    function generatePDF() {
+      const dataDiv = document.getElementById('result');
+      html2pdf()
+        .from(dataDiv)
+        .save('downloaded.pdf');
+    }
+    </script>
+    
+</body>
+</html>
